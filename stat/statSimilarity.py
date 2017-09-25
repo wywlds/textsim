@@ -1,6 +1,15 @@
 from matplotlib import pyplot as plt
 import re
 from math import log
+
+
+def plotXY(x, y):
+    plt.bar(x, y, width=0.1)
+    plt.xlabel("similarity score")
+    plt.ylabel("percentile")
+    plt.show()
+
+
 if __name__=="__main__":
     trainingds = open("../dataset/sick/train.txt")
     scoremap={}
@@ -26,7 +35,12 @@ if __name__=="__main__":
     for (score, num) in scoreList:
         x.append(score)
         y.append(num)
-    plt.bar(x, y,width=0.1)
-    plt.xlabel("similarity score")
-    plt.ylabel("num")
-    plt.show()
+    #plotXY()
+    sumnum = sum(y)
+    print sumnum
+    ynormalized = []
+    aggrenum = 0
+    for num in y:
+        aggrenum += num
+        ynormalized.append(int(float(aggrenum)/float(sumnum)*100))
+    plotXY(x, ynormalized)
