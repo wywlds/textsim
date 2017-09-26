@@ -4,3 +4,10 @@
 ## Path
     /dataset
         /sick --- SICK 数据集,包括train和test两部分
+    /baseline --- 常数模型
+    /metrics  --- 评估指标和校准的工具
+    /stats    --- 数据集统计分析
+    /levendistance --- 编辑距离算法
+    /tf-idf   --- tf-idf cosine算法
+    /lda      --- LDA算法
+    /doc2vec  --- doc2vec算法
