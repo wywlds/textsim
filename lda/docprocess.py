@@ -4,11 +4,19 @@ def process():
     trainds = open("../dataset/sick/train.txt")
     testds = open("../dataset/sick/test.txt")
     texts = []
+    meaninglesswords = open("./meaninglesswords")
+    killingwords = []
+    for l in meaninglesswords.readlines():
+        words = l.split(",")
+        for word in words:
+            killingwords.append(word.strip())
+    print killingwords
     def addSen(sent):
         words = re.split(",| ", sent)
         wordlist = []
         for word in words:
-            if word == "":
+            word = word.lower()
+            if word == "" or word in killingwords:
                 continue
             else:
                 wordlist.append(word)
@@ -22,12 +30,9 @@ def process():
         addSen(items[1])
         addSen(items[2])
     dictionary = corpora.Dictionary(texts)
-    #dictionary.save('../dataset/sick/sick.dict')
+    dictionary.save('../dataset/sick/sick.dict')
     corpus = [dictionary.doc2bow(text) for text in texts]
-    #corpora.MmCorpus.serialize('../dataset/sick/sick.mm', corpus)
-    #print dictionary.token2id
-    model = models.LdaModel(corpus, id2word=dictionary, num_topics=100)
-    print model.print_topics(2)
+    corpora.MmCorpus.serialize('../dataset/sick/sick.mm', corpus)
 
 if __name__=="__main__":
     process()

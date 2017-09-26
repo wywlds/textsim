@@ -1,8 +1,9 @@
 from gensim import corpora, models, similarities
 import re
 import metrics
-def predict():
+def predict(numt):
     lda = models.LdaModel.load("../dataset/sick/model.lda")
+    #lda = models.LdaModel.load("../dataset/sick/modeltfidf.lda")
     dictionary = corpora.Dictionary.load("../dataset/sick/sick.dict")
     testds = open("../dataset/sick/test.txt")
     def splitSent(sent):
@@ -23,17 +24,17 @@ def predict():
         sent2 = items[2]
         txt2 = dictionary.doc2bow(splitSent(sent2))
         corpus = [txt1, txt2]
-        index=similarities.MatrixSimilarity(lda[corpus],num_features=100)
+        index=similarities.MatrixSimilarity(lda[corpus],num_features=numt)
         sim = index[lda[txt2]]
         simscores.append(sim[0])
 
         score = float("%.1f" % float(items[3]))
         scores.append(score)
     calibrated = metrics.calibration(simscores)
-    print calibrated
-    print scores
+    #print calibrated
+    #print scores
     metrics.evaluate(calibrated, scores)
 
 
 if __name__=="__main__":
-    predict()
+    predict(200)
