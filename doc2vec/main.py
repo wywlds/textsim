@@ -35,7 +35,7 @@ def getTrainCorpus():
 if __name__=="__main__":
     train_corpus = getTrainCorpus()
     #PV-DM
-    model = gensim.models.doc2vec.Doc2Vec(dm=0,size=50, min_count=0, iter=100)
+    model = gensim.models.doc2vec.Doc2Vec(dm=0,size=150, min_count=0, iter=100)
     model.build_vocab(train_corpus)
     model.train(train_corpus, total_examples=model.corpus_count, epochs=model.iter)
     model.save("../dataset/sick/doc2vec")
