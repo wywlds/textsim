@@ -35,6 +35,21 @@ def predict(numt):
     #print scores
     metrics.evaluate(calibrated, scores)
 
+    partitionScores = [[],[],[],[]]
+    calibratedScores = [[],[],[],[]]
+    for i in range(len(scores)):
+        if scores[i] == 5.0:
+            partitionScores[3].append(scores[i])
+            calibratedScores[3].append(calibrated[i])
+        else:
+            position = int(scores[i])-1
+            partitionScores[position].append(scores[i])
+            calibratedScores[position].append(calibrated[i])
+    print partitionScores[1][1:4]
+    print calibratedScores[1][1:4]
+    for i in range(4):
+        metrics.evaluate(partitionScores[i], calibratedScores[i])
+
 
 if __name__=="__main__":
     predict(200)
