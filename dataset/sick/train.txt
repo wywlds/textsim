@@ -1,6 +1,6 @@
 4	The young boys are playing outdoors and the man is smiling nearby	There is no boy playing outdoors and there is no man smiling	3.6	CONTRADICTION
 24	A person in a black jacket is doing tricks on a motorbike	A skilled person is riding a bicycle on one wheel	3.4	NEUTRAL
-105	Four children are doing backbends in the gym	Four girls are doing backbends and playing outdoors	3.8	NEUTRAL
+105	Four children are doing back bends in the gym	Four girls are doing back bends and playing outdoors	3.8	NEUTRAL
 116	A player is throwing the ball	Two teams are competing in a football match	2.9	NEUTRAL
 119	Five children are standing in front of a wooden hut	Five children are standing in a wooden hut	4.2	NEUTRAL
 185	Few people are eating at red tables in a restaurant without lights	A large group of Asian people is eating at a restaurant	2.6	NEUTRAL
@@ -42,7 +42,7 @@
 882	The girl in the blue and white uniform is cheering	The girl is cheering the man in the blue and white uniform	3.1	NEUTRAL
 913	A woman is being kissed by a man	There is no woman being kissed by a man	4.2	CONTRADICTION
 933	The girl in the red shirt is blowing a bubble 	The young girl is blowing a bubble that is huge	3.8	NEUTRAL
-947	Some corndogs are being eaten by two toddlers who are in a wagon, which is really small	Two toddlers are eating corndogs in a wagon, which is really small	4.8	ENTAILMENT
+947	Some corn dogs are being eaten by two toddlers who are in a wagon, which is really small	Two toddlers are eating corn dogs in a wagon, which is really small	4.8	ENTAILMENT
 980	A man is getting on a horse on a track laid in the wild	A horse is tossing the cowboy wearing pants of blue and red color	2.1	NEUTRAL
 987	An adult is in the amphitheater and is talking to a boy	There is no adult in the amphitheater talking to a boy	4.3	CONTRADICTION
 988	A talk about an adult and a boy is given in the amphitheater	An adult is in the amphitheater and is talking to a boy	3.1	NEUTRAL
@@ -353,7 +353,7 @@
 7027	The boy and girl are not playing on a playground	The boy and girl are playing on the outdoor gym	3	NEUTRAL
 7043	The motocross rider is standing naked	A biker with a blue jacket, black pants and a white helmet is driving on dirt and people are watching	2.6	NEUTRAL
 7044	The rider on the blue and black motocross bike is not wearing the pants	A biker with a blue jacket, black pants and a white helmet is driving on dirt and people are watching	3.2	NEUTRAL
-7064	A trick is being performed by a rollerblader on a ramp	A rollerblader is performing a trick on a ramp	5	ENTAILMENT
+7064	A trick is being performed by a roller blader on a ramp	A roller blader is performing a trick on a ramp	5	ENTAILMENT
 7088	A group of football players is standing still in the field	The crowd is watching a football game	2.6	NEUTRAL
 7093	The group of people is standing together and looking at the camera	A group of people is standing together and looking at the camera	5	ENTAILMENT
 7214	A brown dog is running across the yard with a toy in its mouth	There is no brown dog running across the yard with a toy in its mouth	3.8	CONTRADICTION
@@ -403,7 +403,7 @@
 8057	A young girl is wearing a blue patterned swim suit, a black and yellow swim cap and has blue swimming goggles on her head	A little girl is wearing a blue patterned swim suit, a black and yellow swim cap and has blue swimming goggles on the head	4.8	ENTAILMENT
 8122	A female cheerleader is sitting on the knee of a male cheerleader	Some cheerleaders are relaxing	3	NEUTRAL
 8138	The girl has red hair and eyebrows, several piercings in a ear and a drawing on the back	The girl has red hair and eyebrows, several piercings in a ear and a tattoo on the back	4.4	ENTAILMENT
-8141	The girl has red hair and eyebrows, several piercings in a ear and no tattoo on the back	A girl with red hair and red eyebrows is in midspeech	3	NEUTRAL
+8141	The girl has red hair and eyebrows, several piercings in a ear and no tattoo on the back	A girl with red hair and red eyebrows is in mid speech	3	NEUTRAL
 8163	Two people are driving a jeep and a lady is sitting on the top of it	Two people are driving a jeep and a girl is sitting on the top of it	4.8	ENTAILMENT
 8193	The adults and children are not gathered near an outdoor seating arrangement	The adults and children are being gathered near an outdoor seating arrangement	4.4	CONTRADICTION
 8212	A girl has colored patches on the cheeks	A girl is standing in a group and is wearing a black shirt and pink beads	2.4	NEUTRAL
@@ -427,7 +427,7 @@
 8632	A man is not rock climbing and a city and a bay are in the background	A man is rock climbing and a city and a bay are in the background	4.4	CONTRADICTION
 8633	A man is rock climbing, pausing and calculating the route	A man is rock climbing, stopping and calculating the route	4.8	ENTAILMENT
 8658	No group of people is gathering at a stand at the fair	The people are standing at a carnival	3.8	NEUTRAL
-8660	A group of rollerbladers is lining up on the street	A group of rollerbladers is lining up on the road	4.9	ENTAILMENT
+8660	A group of roller bladers is lining up on the street	A group of roller bladers is lining up on the road	4.9	ENTAILMENT
 8678	A skateboarder is jumping off a ramp	A skateboarder is making a jump off a ramp	4.8	ENTAILMENT
 8700	A black and orange bird is standing in the grass	The black bird with a yellow beak is standing in the green grass	4	NEUTRAL
 8714	Two white dogs are quickly running together	Two white dogs are running together	4.6	ENTAILMENT
@@ -540,9 +540,9 @@
 93	A lone biker is jumping in the air	A man is jumping into a full pool	1.7	NEUTRAL
 94	The man's jumper is in the empty pool	A lone biker is jumping in the air	1.4	NEUTRAL
 97	A lone biker is jumping in the air	A man is jumping into an empty pool	1.5	NEUTRAL
-98	Four kids are doing backbends in the park	Four children are doing backbends in the park	4.8	ENTAILMENT
-99	Four children are doing backbends in the gym	Four children are doing backbends in the park	3.8	NEUTRAL
-100	Four girls are doing backbends and playing in the garden	Four girls are doing backbends and playing outdoors	4.1	ENTAILMENT
+98	Four kids are doing back bends in the park	Four children are doing back bends in the park	4.8	ENTAILMENT
+99	Four children are doing back bends in the gym	Four children are doing back bends in the park	3.8	NEUTRAL
+100	Four girls are doing back bends and playing in the garden	Four girls are doing back bends and playing outdoors	4.1	ENTAILMENT
 107	A man who is playing is running with the ball in his hands	A player is running with the ball	4.3	ENTAILMENT
 112	Two groups of people are playing football	A player is running with the ball	2.1	NEUTRAL
 113	Two teams are competing in a baseball game	A player is running with the ball	3	NEUTRAL
@@ -702,10 +702,10 @@
 475	A laughing child is holding a water gun and getting sprayed with water	A child with a gun that sprays water is laughing and getting hit by other boys	4	NEUTRAL
 476	There is no child holding a water gun or getting sprayed with water	A laughing child is holding a water gun and getting sprayed with water	4	CONTRADICTION
 477	A child with a gun that sprays water is laughing and getting hit by other boys	A child is holding a squirt gun	3.9	ENTAILMENT
-484	Two daschunds are playing with a red ball	Two dogs are playing with a small red ball	4.2	NEUTRAL
-485	Two cats are playing with a red ball	Two daschunds are playing with a red ball	3.3	NEUTRAL
+484	Two dogs are playing with a red ball	Two dogs are playing with a small red ball	4.2	NEUTRAL
+485	Two cats are playing with a red ball	Two dogs are playing with a red ball	3.3	NEUTRAL
 486	Two brown dogs are fighting over a red ball and are playing in the grass	Two dogs are playing with a small red ball	3.8	NEUTRAL
-489	There is no dog playing with a red ball	Two daschunds are playing with a red ball	3	CONTRADICTION
+489	There is no dog playing with a red ball	Two dogs are playing with a red ball	3	CONTRADICTION
 491	The black and white dog is running and a person stands behind it	The dog, which is black and white, is running and a person stands behind it	4.9	ENTAILMENT
 494	A little dog is sprinting and the person who owns it is trying to catch it	A little dog is sprinting and its owner is trying to catch it	4.8	ENTAILMENT
 496	The black and white dog is running and a person stands behind it	A little dog is sprinting and the person who owns it is trying to catch it	3	NEUTRAL
@@ -853,7 +853,7 @@
 820	A person in biking gear is standing steadily in front of some mountains 	The mountain gear is steadily placed in front of the standing biker	3.6	NEUTRAL
 822	There is no person in bike gear standing steadily in front of the mountains	A group of people is equipped with protective gear	2.3	NEUTRAL
 824	A group of people is equipped with gear used for protection	A person in biking gear is standing steadily in front of some mountains 	2	NEUTRAL
-825	A group of people is equipped with unprotective gear	A person in biking gear is standing steadily in front of some mountains 	2	NEUTRAL
+825	A group of people is equipped with gear	A person in biking gear is standing steadily in front of some mountains 	2	NEUTRAL
 830	The little kid is playing football and falling harmlessly into the grass	The little kid is playing football and falling into the grass	4.6	ENTAILMENT
 831	There is no little kid playing football and falling into the grass	The little kid is playing football and falling into the grass	4.1	CONTRADICTION
 836	The football is between the feet of a boy who is lying on the grass	The little kid is playing football and falling into the grass	3.5	NEUTRAL
@@ -910,17 +910,17 @@
 943	A little boy is jumping into a puddle on the street	A young child is wearing boots made of green rubber and playing in a puddle full of mud	4.2	NEUTRAL
 944	A young child is barefoot and is walking past a puddle full of mud	A little boy is jumping into a puddle on the street	2.9	NEUTRAL
 945	Some green boots in a puddle full of mud are targeted by a playful young child wearing a scarf	A little boy is jumping into a puddle on the street	2.6	NEUTRAL
-948	Two toddlers are sleeping in a wagon, which is really small	Two toddlers are eating corndogs in a wagon, which is really small	3.4	NEUTRAL
-949	Two toddlers are eating on a really small wagon full of corndogs 	Two toddlers are eating corndogs in a wagon, which is really small	3.9	NEUTRAL
-950	Two young kids are eating corndogs	Two young children are eating corndogs	4.9	ENTAILMENT
-953	Two toddlers are eating corndogs in a wagon, which is really small	Two young children are eating corndogs	4.5	ENTAILMENT
-956	Some corndogs are being eaten by two toddlers who are in a wagon, which is really small	Two young kids are eating corndogs	4.3	ENTAILMENT
-957	Two toddlers are sleeping in a wagon, which is really small	Two young kids are eating corndogs	1.6	NEUTRAL
-959	Two toddlers are eating corndogs in a wagon, which is really small	Two young kids are eating corndogs	4.3	ENTAILMENT
+948	Two toddlers are sleeping in a wagon, which is really small	Two toddlers are eating corn dogs in a wagon, which is really small	3.4	NEUTRAL
+949	Two toddlers are eating on a really small wagon full of corn dogs 	Two toddlers are eating corn dogs in a wagon, which is really small	3.9	NEUTRAL
+950	Two young kids are eating corn dogs	Two young children are eating corn dogs	4.9	ENTAILMENT
+953	Two toddlers are eating corn dogs in a wagon, which is really small	Two young children are eating corn dogs	4.5	ENTAILMENT
+956	Some corn dogs are being eaten by two toddlers who are in a wagon, which is really small	Two young kids are eating corn dogs	4.3	ENTAILMENT
+957	Two toddlers are sleeping in a wagon, which is really small	Two young kids are eating corn dogs	1.6	NEUTRAL
+959	Two toddlers are eating corn dogs in a wagon, which is really small	Two young kids are eating corn dogs	4.3	ENTAILMENT
 960	A man in a shirt dyed purple is looking at a man in a black shirt who is doing a funny face	A man in a shirt dyed purple is looking at a man in a black shirt who is doing a face which looks funny	5	ENTAILMENT
 961	A man in a shirt dyed purple is walking away from a man in a black shirt, who is serious	A man in a shirt dyed purple is looking at a man in a black shirt who is doing a funny face	3.4	ENTAILMENT
 962	A man in a shirt dyed purple is looking at a man in a black shirt who is doing a funny face	A man in a purple shirt is dying another shirt black, which has a man looking at a dog doing a funny face painted on it.	3	NEUTRAL
-963	A man in a pose is being amusedly watched by another man	A man doing a pose is being watched by another man	4.6	ENTAILMENT
+963	A man in a pose is being watched by another man	A man doing a pose is being watched by another man	4.6	ENTAILMENT
 967	A man in a shirt dyed purple is looking at a man in a black shirt who is doing a funny face	There is no man in a pose being watched by another man	3.6	NEUTRAL
 970	A man doing a pose is being watched by another man	A man in a shirt dyed purple is walking away from a man in a black shirt, who is serious	2.8	NEUTRAL
 973	A horse is tossing the cowboy wearing pants of blue and red color	The cowboy in blue and red pants is being tossed by a horse	4.9	ENTAILMENT
@@ -1200,10 +1200,10 @@
 1591	The chef is carefully pouring oil in the pan	A man is pouring liquid into a pot	3.2	NEUTRAL
 1592	A man is pouring liquid into a pot	The chef is carefully drying the oil from the pan	2.3	NEUTRAL
 1595	A man is pouring liquid into a pot	The chef is carefully pouring some oil into a pan	4.1	NEUTRAL
-1599	The man is operating a stenograph	The man isn't operating a stenograph	3.3	CONTRADICTION
-1601	The man is cautiously operating a stenograph	A man is typing on a machine used for stenography	4.2	NEUTRAL
-1604	The man is typing on a machine used for stenography	The man is operating a stenograph	4.8	ENTAILMENT
-1606	The man is operating a stenograph	A man is typing on a machine used for stenography	4.7	ENTAILMENT
+1599	The man is operating a shorthand	The man isn't operating a shorthand	3.3	CONTRADICTION
+1601	The man is cautiously operating a shorthand	A man is typing on a machine used for shorthand	4.2	NEUTRAL
+1604	The man is typing on a machine used for shorthand	The man is operating a shorthand	4.8	ENTAILMENT
+1606	The man is operating a shorthand	A man is typing on a machine used for shorthand	4.7	ENTAILMENT
 1607	A snake is being fed a mouse by a man	One man is feeding a mouse to the snake	4.7	ENTAILMENT
 1609	A poor man is being fed snakes and mice	A snake is being fed a mouse by a man	2.3	NEUTRAL
 1610	The man is carefully feeding a mouse to the snake	The man is cautiously feeding a mouse to the snake	4.8	ENTAILMENT
@@ -1228,7 +1228,7 @@
 1648	A girl is on a jumping car	The girl is recklessly jumping onto a car	4	NEUTRAL
 1649	The girl is recklessly jumping onto a vehicle	One girl is jumping on the car	4.2	NEUTRAL
 1650	The girl isn't jumping onto the car recklessly	One girl is jumping on the car	3.3	NEUTRAL
-1651	A car is riskily jumping over a girl	One girl is jumping on the car	2.9	NEUTRAL
+1651	A car is risk jumping over a girl	One girl is jumping on the car	2.9	NEUTRAL
 1652	The girl is recklessly jumping onto a car	One girl is jumping on the car	4.4	ENTAILMENT
 1653	One woman is slowly peeling a potato	One woman is peeling a potato	4.7	ENTAILMENT
 1655	A woman is throwing a potato peel	One woman is peeling a potato	3.6	NEUTRAL
@@ -1459,7 +1459,7 @@
 2148	The man is slicing potatoes	A woman is peeling a potato	3.4	NEUTRAL
 2150	A man is taking pictures of a lake	A man is tearing up the pictures of a lake	3.4	NEUTRAL
 2153	The man is setting up the camera and taking sunset pictures at the beach	The man is putting away the camera and walks away from the beach	3.5	CONTRADICTION
-2163	A woman is unstitching with a machine	A woman is sewing with a machine	3.6	NEUTRAL
+2163	A woman is not stitching with a machine	A woman is sewing with a machine	3.6	NEUTRAL
 2164	A woman is using a machine made for sewing	A woman is using a sewing machine	4.8	ENTAILMENT
 2165	A woman is using a sewing machine	There is no woman using a sewing machine	4.1	CONTRADICTION
 2167	A woman is sewing with a machine	There is no woman using a sewing machine	3.2	CONTRADICTION
@@ -2283,10 +2283,10 @@
 4034	A man is repairing tiles with his hands	A man is breaking wooden boards with his hand	2.235	NEUTRAL
 4036	A person is riding a jetski in the waves	The person is riding a jetski in the waves	5	ENTAILMENT
 4037	A person is riding a jetski in the waves	There is no person riding a jetski in the waves	4	CONTRADICTION
-4038	A Seadoo is being ridden by a woman	A woman is riding a Seadoo	5	ENTAILMENT
-4040	A person is riding a jetski in the waves	A Seadoo is being ridden by a woman	3.9	NEUTRAL
-4041	A person is riding a jetski in the waves	A woman is parking a Seadoo	2.6	NEUTRAL
-4043	A woman is riding a Seadoo	There is no person riding a jetski in the waves	2.7	CONTRADICTION
+4038	A jetski is being ridden by a woman	A woman is riding a jetski	5	ENTAILMENT
+4040	A person is riding a jetski in the waves	A jetski is being ridden by a woman	3.9	NEUTRAL
+4041	A person is riding a jetski in the waves	A woman is parking a jetski	2.6	NEUTRAL
+4043	A woman is riding a jetski	There is no person riding a jetski in the waves	2.7	CONTRADICTION
 4045	A man is dancing	A person is dancing	4.5	ENTAILMENT
 4046	A man is standing still	A man is dancing	2.6	NEUTRAL
 4047	A man is slowly dancing on the road	A man is dancing on the road	4.7	ENTAILMENT
@@ -3480,7 +3480,7 @@
 6580	The tan dog is not watching a brown dog that is swimming in a pond	A pet dog is standing on the bank and is looking at another brown dog in the pond	3.3	NEUTRAL
 6582	The tan dog is watching a brown dog that is swimming in a pond	There is no pet dog standing on the bank and looking at another brown dog in the pond	2.5	NEUTRAL
 6584	A young female is dancing	A young girl is dancing	4.7	ENTAILMENT
-6588	A young girl is dancing	A young girl is standing challengingly on one leg	2.9	NEUTRAL
+6588	A young girl is dancing	A young girl is standing challenging on one leg	2.9	NEUTRAL
 6589	A young girl is dancing	A young girl is standing on both legs	3.2	NEUTRAL
 6591	A young girl is standing on one leg	A young girl is standing still	4	NEUTRAL
 6593	A bee is clinging to a yellow flower	A yellow flower is being clung to by a bee	4.6	ENTAILMENT
@@ -3628,7 +3628,7 @@
 6919	A bearded man is sitting by a shopping cart and is dropping a cardboard sign	A bearded man is standing by a shopping cart and is holding a cardboard sign	4	NEUTRAL
 6920	One bearded man is standing by a shopping cart and is holding a cardboard sign	A man is holding a sign and is seeking money	3.5	NEUTRAL
 6921	A man is holding a sign and is seeking money	A bearded man is sitting by a shopping cart and is dropping a cardboard sign	2.9	NEUTRAL
-6922	A man is uninterestedly holding a sign and is seeking money	A bearded man is standing by a shopping cart and is holding a cardboard sign	3.8	NEUTRAL
+6922	A man is uninterested holding a sign and is seeking money	A bearded man is standing by a shopping cart and is holding a cardboard sign	3.8	NEUTRAL
 6923	There is no man holding a sign and seeking money	A bearded man is standing by a shopping cart and is holding a cardboard sign	3.4	NEUTRAL
 6924	A bearded man is standing by a shopping cart and is holding a cardboard sign	A man is seeking a sign and is holding some money	3.1	NEUTRAL
 6927	There is no snowboarder doing a flip over a mound of snow	A snowboarder is doing a flip over a mound of snow	3.8	CONTRADICTION
@@ -3645,7 +3645,7 @@
 6958	Four people are performing music outdoors	Four people are silently standing outdoors	3	NEUTRAL
 6964	Four people are performing music outdoors	A white man is staging a hat and a playing guitar	2.9	NEUTRAL
 6966	A man in a white hat is playing guitar on stage	Four people are silently standing outdoors	1.6	NEUTRAL
-6968	A man is participating in a bmx race	A man is participating in a race for bmxs	4.7	ENTAILMENT
+6968	A man is participating in a bmx race	A man is participating in a race for bmx	4.7	ENTAILMENT
 6969	A man is participating in a bmx race	A man is not participating in a bmx race	3.7	CONTRADICTION
 6970	A man in a red uniform is swiftly making a jump in a dirt bike race	A man in a red uniform is making a jump in a dirt bike race	4.4	ENTAILMENT
 6974	A man is participating in a bmx race	There is no man in a red uniform making a jump in a dirt bike race	2.8	NEUTRAL
@@ -3691,9 +3691,9 @@
 7061	A man is drinking orange juice and walking on a sunny day	A person is drinking orange juice and walking	4.4	ENTAILMENT
 7063	A man is drinking orange juice and walking on a sunny day	A man is drinking orange juice and walking	4.3	ENTAILMENT
 7066	A man on inline skates is skating at a skate park	A man on inline skates is skating at a park built for skating	4.7	ENTAILMENT
-7070	A man on inline skates is skating at a skate park	A trick is being performed by a rollerblader on a ramp	3.8	NEUTRAL
+7070	A man on inline skates is skating at a skate park	A trick is being performed by a roller blader on a ramp	3.8	NEUTRAL
 7074	A black dog is standing in shallow water	A black dog is standing in deep water	3.9	NEUTRAL
-7077	A black dog with a red collar is amusedly putting its face in the water	A black dog is standing in shallow water	4	NEUTRAL
+7077	A black dog with a red collar is amused putting its face in the water	A black dog is standing in shallow water	4	NEUTRAL
 7081	A black dog with a red collar is putting its face in the water	A black dog is standing in shallow water	3.4	NEUTRAL
 7082	The crowd is watching a football game	A football game is being watched by the crowd	5	ENTAILMENT
 7083	The crowd is watching a football game	The crowd is not watching a football game	4.2	CONTRADICTION
@@ -3723,7 +3723,7 @@
 7126	A brown dog and a black dog are frolicking in the sand	A black dog is playing with a brown dog on the sand	4.4	ENTAILMENT
 7127	A black dog is playing with a brown dog on the sand	There is no brown dog and black dog playing in the sand	4	CONTRADICTION
 7133	A woman and three men are posing for a photo	A woman is posing for three men for a photo	3.5	NEUTRAL
-7138	A woman and three men are posing motionlessly for a photo	Three men and a woman are posing for a picture	4.5	ENTAILMENT
+7138	A woman and three men are posing motionless for a photo	Three men and a woman are posing for a picture	4.5	ENTAILMENT
 7139	A woman and three men are denying a photo	Three men and a woman are posing for a picture	4	NEUTRAL
 7143	There is no young boy covered in grass jumping near a wooden fence	A young boy covered in grass is jumping near a wooden fence	3.4	CONTRADICTION
 7144	A young boy is jumping and covering nearby wooden fence with grass	A young boy covered in grass is jumping near a wooden fence	3.2	NEUTRAL
@@ -3817,8 +3817,8 @@
 7371	A person is standing on a mountain top	One man is standing on the top of the rocks with clouds behind them	3.7	NEUTRAL
 7372	A person is lying on the top of the rocks with clouds behind them	A person is standing on a mountain top	2.4	NEUTRAL
 7375	A man is standing on the top of the rocks with clouds behind them	A person is sitting on a mountain top	3.4	NEUTRAL
-7381	A smiling boy in winter clothes is waving his mittened hands outside a building in the snow	A child, who is young, dressed for cold weather, is standing outside	3.9	NEUTRAL
-7383	A young child dressed for cold weather is standing outside	The smiling boy in winter clothes is waving his mittened hands outside the building in the snow	3.2	NEUTRAL
+7381	A smiling boy in winter clothes is waving his mitten hands outside a building in the snow	A child, who is young, dressed for cold weather, is standing outside	3.9	NEUTRAL
+7383	A young child dressed for cold weather is standing outside	The smiling boy in winter clothes is waving his mitten hands outside the building in the snow	3.2	NEUTRAL
 7386	A kid is smiling at the camera and swimming underwater	A child is smiling at the camera and swimming underwater	4.7	ENTAILMENT
 7388	A child is playfully swimming underwater in a pool	A child is swimming underwater in a pool	4.5	ENTAILMENT
 7389	A child is swimming underwater in a pool	A child is swimming on the water's surface in a pool	3.2	NEUTRAL
@@ -3982,7 +3982,7 @@
 7723	A man is spraying a super soaker into the mouth of a dog	A man is squirting water into the mouth of a white dog with a squirt gun	4	NEUTRAL
 7724	A boy under an umbrella is being held by his father who is wearing a coat dyed in blue	A boy under an umbrella is being held by his father who is wearing a blue coat	4.6	ENTAILMENT
 7728	A child is experiencing a new world	A child is falling asleep	2.7	NEUTRAL
-7729	A boy under an umbrella is being held by his father who is wearing a blue coat	A child is amazedly experiencing a new world	1.6	NEUTRAL
+7729	A boy under an umbrella is being held by his father who is wearing a blue coat	A child is amazed experiencing a new world	1.6	NEUTRAL
 7731	A child is experiencing a new world	A boy under an umbrella is being held by his father who is wearing a coat dyed in blue	1.8	NEUTRAL
 7732	A child is experiencing a new world	A boy under an umbrella is being let go by his father who is wearing a blue coat	1.2	NEUTRAL
 7733	A boy, who is wearing a blue coat, is being held by his father under an umbrella 	A child is experiencing a new world	1.7	NEUTRAL
@@ -4170,8 +4170,8 @@
 8129	Several young people are posing for a photo and holding beers	Several young people are posing for a photo and holding drinks	4.5	ENTAILMENT
 8130	Several young people are posing for a photo and holding beers	Several old people are posing for a photo and holding beers	3.265	NEUTRAL
 8134	Several young people are posing for a photo and holding beers	A group of people is holding food and pointing at the camera	3.3	NEUTRAL
-8136	A girl with red hair and red eyebrows is talking	A girl with red hair and red eyebrows is in midspeech	4.6	ENTAILMENT
-8143	A girl with red hair and red eyebrows is in midspeech	The girl has red hair and eyebrows, several piercings in a ear and a tattoo on the back	3.4	NEUTRAL
+8136	A girl with red hair and red eyebrows is talking	A girl with red hair and red eyebrows is in mid speech	4.6	ENTAILMENT
+8143	A girl with red hair and red eyebrows is in mid speech	The girl has red hair and eyebrows, several piercings in a ear and a tattoo on the back	3.4	NEUTRAL
 8145	A woman in blue has a yellow ball in the mitt	A woman in blue has a yellow ball in the hand	3.8	NEUTRAL
 8147	The girl in blue is chasing the base runner with a number on the jersey	The girl in blue is chasing the player with a number on the jersey	4.4	ENTAILMENT
 8152	The girl in blue is chasing the base runner with a number on the jersey	A man in blue has a yellow ball in the mitt	2.7	NEUTRAL
@@ -4398,17 +4398,17 @@
 8636	A woman is rock climbing, pausing and calculating the route	A man is rock climbing and a city and a bay are in the background	3.5	NEUTRAL
 8637	A man is rock climbing, pausing and calculating the route	A person is rock climbing and a city and a bay are in the background	3.55	NEUTRAL
 8639	A man is rock climbing, pausing and calculating the route	A man is rock climbing and a city and a bay are in the background	3.3	NEUTRAL
-8645	A little girl is hitting a ball off a tee	A little girl in a pink shirt is playing t-ball and taking a swing	4.1	NEUTRAL
-8646	A little girl is missing a baseball on a tee	A little girl in a pink shirt is playing t-ball and taking a swing	3.9	NEUTRAL
-8647	A little girl in a pink shirt is playing t-ball and taking a swing	A girl is hitting a little tee with a baseball	3.3	NEUTRAL
-8649	A little girl is hitting a baseball off a tee	A little boy in a pink shirt is playing t-ball and taking a swing	3.3	NEUTRAL
+8645	A little girl is hitting a ball off a tee	A little girl in a pink shirt is playing t ball and taking a swing	4.1	NEUTRAL
+8646	A little girl is missing a baseball on a tee	A little girl in a pink shirt is playing t ball and taking a swing	3.9	NEUTRAL
+8647	A little girl in a pink shirt is playing t ball and taking a swing	A girl is hitting a little tee with a baseball	3.3	NEUTRAL
+8649	A little girl is hitting a baseball off a tee	A little boy in a pink shirt is playing t ball and taking a swing	3.3	NEUTRAL
 8651	People are grouping at a stand at the fair	A group of people is gathering at a stand at the fair	4.8	ENTAILMENT
 8656	A group of people is gathering at a stand at the fair	The people are running at a carnival	2.8	NEUTRAL
 8657	People are grouping at a stand at the fair	The people are standing at a carnival	3.6	NEUTRAL
-8663	Rollerbladers are rolling in formation down a hill	Rollerbladers are not rolling in formation down a hill	4.3	CONTRADICTION
-8664	Rollerbladers are running in formation down a hill	A group of rollerbladers is lining up on the street	3.8	NEUTRAL
-8665	Rollerbladers are not rolling in formation down a hill	A group of rollerbladers is lining up on the street	3.2	NEUTRAL
-8668	Rollerbladers are rolling in formation down a hill	A group of rollerbladers is lining up on the street	3.4	NEUTRAL
+8663	roller bladers are rolling in formation down a hill	roller bladers are not rolling in formation down a hill	4.3	CONTRADICTION
+8664	roller bladers are running in formation down a hill	A group of roller bladers is lining up on the street	3.8	NEUTRAL
+8665	roller bladers are not rolling in formation down a hill	A group of roller bladers is lining up on the street	3.2	NEUTRAL
+8668	roller bladers are rolling in formation down a hill	A group of roller bladers is lining up on the street	3.4	NEUTRAL
 8669	A woman is marching with a pair of dogs	A woman is walking with a pair of dogs	4.4	ENTAILMENT
 8674	A woman is marching with a pair of dogs	A woman is showing a dog with very short hair at a dog show	2.4	NEUTRAL
 8675	A woman is walking with a pair of dogs	A woman is showing a dog with very long hair at a dog show	2.8	NEUTRAL
@@ -4857,11 +4857,11 @@
 9680	The girl is wearing an orange shirt and a striped tie	A girl is wearing an orange shirt and a striped tie	4.9	ENTAILMENT
 9684	A woman in an orange shirt and clown makeup is standing in a park and others are looking on	A girl is wearing an orange shirt and a striped tie	3	NEUTRAL
 9687	A man is performing a jump on a bicycle	A cyclist is performing a jump on a bicycle	4.4	NEUTRAL
-9689	A bicyclist is performing a trick over a heavily graphitized wall	A bicyclist is performing a trick over wall full of graffiti	4.8	ENTAILMENT
+9689	A bicyclist is performing a trick over a heavily graphic wall	A bicyclist is performing a trick over wall full of graffiti	4.8	ENTAILMENT
 9691	A cyclist is performing a jump on a bicycle	A bicyclist is performing a trick over wall full of graffiti	3.8	NEUTRAL
 9692	A bicyclist is performing a trick over a clean wall	A cyclist is performing a jump on a bicycle	4.4	NEUTRAL
-9694	There is no cyclist performing a jump on a bicycle	A bicyclist is performing a trick over a heavily graphitized wall	3.4	NEUTRAL
-9695	A bicyclist is performing a trick over a heavily graphitized wall	A cyclist is performing a jump on a bicycle	3.585	NEUTRAL
+9694	There is no cyclist performing a jump on a bicycle	A bicyclist is performing a trick over a heavily graphic wall	3.4	NEUTRAL
+9695	A bicyclist is performing a trick over a heavily graphic wall	A cyclist is performing a jump on a bicycle	3.585	NEUTRAL
 9697	A woman is showing a small cat to an infant	A woman is showing a small dog to an infant	3.5	NEUTRAL
 9698	A woman is crouching down next to a dog and is smiling at a young girl sitting on the sidewalk	A woman is crouching down next to a dog and is smiling at a little girl sitting on the sidewalk	4.8	ENTAILMENT
 9699	A woman is crouching down next to a dog and is smiling at a little girl sitting on the sidewalk	A man is crouching down next to a dog and is smiling at a little girl sitting on the sidewalk	4.2	NEUTRAL
@@ -4936,7 +4936,7 @@
 9859	The men are packing suitcases into the trunk of a car	The young boy is running through the ocean waves	1	NEUTRAL
 9860	Cereal is being eaten by the man	The boy and the girl are playing and wearing arm floats	1	NEUTRAL
 9863	A person in a black jacket is doing tricks on a motorbike	The girl, who is little, is carefully combing her hair into a pony tail	1.3	NEUTRAL
-9864	A large dog and a small dog are standing next to the kitchen counter and are investigating	A smiling boy in winter clothes is waving his mittened hands outside a building in the snow	1	NEUTRAL
+9864	A large dog and a small dog are standing next to the kitchen counter and are investigating	A smiling boy in winter clothes is waving his mitten hands outside a building in the snow	1	NEUTRAL
 9868	A fish is being sliced by a man	A cat is jumping into a box	1	NEUTRAL
 9870	A white and tan dog is running through the tall and green grass	The lady is eating slices of meat	1	NEUTRAL
 9874	A tiger is not walking around	Some people are walking	1.7	NEUTRAL
@@ -4984,8 +4984,8 @@
 9960	The person is riding a motorbike on a sandy track	A man is lifting barbells	1	NEUTRAL
 9967	Four young men are standing still and a car is exploding behind them	A man is standing on a dirt hill next to a black car	2.8	NEUTRAL
 9968	The woman is walking the dog	A woman is rocking over a blanket lying on someone reading a book	1.4	NEUTRAL
-9973	The military officer is shouting at the recruits	A rollerblader is performing a trick on a ramp	1	NEUTRAL
-9974	A man is typing on a machine used for stenography	There is no person riding a bike along a muddy trail	1	NEUTRAL
+9973	The military officer is shouting at the recruits	A roller blader is performing a trick on a ramp	1	NEUTRAL
+9974	A man is typing on a machine used for shorthand	There is no person riding a bike along a muddy trail	1	NEUTRAL
 9976	A man is being curiously looked at by a woman	The man is standing on a rocky mountain and gray clouds are in the background	1.2	NEUTRAL
 9980	The woman is picking up the kangaroo	A man is standing on the top of a roof and playing a violin	1	NEUTRAL
 9981	The violin is being played by a little girl on a beach	A woman is cooking fish	1	NEUTRAL
