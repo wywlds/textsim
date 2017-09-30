@@ -3,6 +3,7 @@ from doc2vec.getinputs import getTrainInputs,getTestInputs
 import metrics
 import numpy as np
 import math
+hidden_state=200
 def next_batch(num, data1, data2, labels):
     idx = np.arange(0, len(data1))
     np.random.shuffle(idx)
@@ -33,21 +34,24 @@ if __name__=="__main__":
     print inputs2[:1]
     print targets[:1]
     input_dim=200
-    batch_num=25
+    batch_num=10
     num_epoch = 50
     x1=tf.placeholder(tf.float32, shape=[None, input_dim], name="x1")
     x2=tf.placeholder(tf.float32, shape=[None, input_dim], name="x2")
-    result = tf.squeeze(tf.reduce_sum( tf.multiply( x1, x2 ), 1, keep_dims=True))
-    subs = tf.norm(tf.subtract(x1,x2),axis=1)
+    result = tf.multiply( x1, x2 )
+    subs = tf.norm(tf.subtract(x1, x2), axis=1, keep_dims=True)
     pivot = tf.placeholder(tf.float32, shape=[None, 5], name="pivot")
 
-    W1 = tf.Variable(tf.random_uniform([1], -1.0, 1.0), name="W1")
-    W2 = tf.Variable(tf.random_uniform([1], -1.0, 1.0), name="W2")
-    bias = tf.Variable(tf.constant(0.1, shape=[1]), name="bias")
+    W1 = tf.Variable(tf.random_uniform([hidden_state,200], -1.0, 1.0), name="W1")
+    W2 = tf.Variable(tf.random_uniform([hidden_state,1], -1.0, 1.0), name="W2")
+    bias = tf.Variable(tf.constant(0.1, shape=[hidden_state,1]), name="bias")
+    w1p=tf.matmul(W1, tf.transpose(result))
+    w2p = tf.matmul(W2, tf.transpose(subs))
+    w3p = tf.add(w1p, w2p)
+    w4p = tf.add(w3p, bias)
+    ltransform = tf.transpose(tf.sigmoid(w4p))
 
-    ltransform = tf.transpose([tf.sigmoid(W1*result + W2*subs + bias)])
-
-    W3 = tf.Variable(tf.random_uniform([1,5], -1.0, 1.0), name="W3")
+    W3 = tf.Variable(tf.random_uniform([hidden_state,5], -1.0, 1.0), name="W3")
     bias2 = tf.Variable(tf.constant(0.1, shape=[5]), name="bias2")
     projection = tf.nn.xw_plus_b(ltransform, W3, bias2)
     psoftmax = tf.nn.softmax(projection)
@@ -57,7 +61,7 @@ if __name__=="__main__":
     init = tf.global_variables_initializer()
 
     l2_regularizer = tf.contrib.layers.l2_regularizer(
-        scale=0.005, scope=None
+        scale=0.0001, scope=None
     )
     weights = tf.trainable_variables()  # all vars of your graph
     regularization_penalty = tf.contrib.layers.apply_regularization(l2_regularizer, weights)
@@ -80,7 +84,7 @@ if __name__=="__main__":
             newScores = []
             for item in transform_result:
                 newScores.append(item[0])
-
+            print newScores
             calibrated = metrics.calibration(newScores)
-            metrics.evaluate(calibrated,originalScores)
+            metrics.evaluate(newScores,originalScores)
 
