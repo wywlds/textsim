@@ -13,6 +13,19 @@ def average(sid):
     print avg
     print trainscore[sid]
 
+def product(sid):
+    left = testleft[sid]
+    right = testright[sid]
+    sumleft = np.zeros(300)
+    sumright = np.zeros(300)
+    for index in left:
+        sumleft += emb[index]
+    for index in right:
+        sumright += emb[index]
+    avgl = sumleft/len(left)
+    avgr = sumright/len(right)
+    print np.dot(avgl, avgr)
+
 def restoreModel(filename):
     W = tf.get_variable("W", shape=[2303,300])
     saver = tf.train.Saver()
@@ -22,4 +35,5 @@ def restoreModel(filename):
         print W.eval()
 
 if __name__=="__main__":
-    restoreModel("../models/DAN.ckpt")
+    #restoreModel("../models/DAN.ckpt")
+    product(0)
