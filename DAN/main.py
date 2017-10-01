@@ -1,3 +1,4 @@
+#coding=utf-8
 import common
 import numpy as np
 import math
@@ -85,11 +86,8 @@ if __name__=="__main__":
     W1 = tf.Variable(tf.random_uniform([hidden_state,300], -1.0, 1.0), name="W1")
     W2 = tf.Variable(tf.random_uniform([hidden_state,1], -1.0, 1.0), name="W2")
     bias = tf.Variable(tf.constant(0.1, shape=[hidden_state,1]), name="bias")
-    w1p=tf.matmul(W1, tf.transpose(product))
-    w2p = tf.matmul(W2, tf.transpose(subs))
-    w3p = tf.add(w1p, w2p)
-    w4p = tf.add(w3p, bias)
-    ltransform = tf.transpose(tf.sigmoid(w4p))
+    wp = tf.matmul(W1, tf.transpose(product)) + tf.matmul(W2, tf.transpose(subs)) + bias
+    ltransform = tf.transpose(tf.sigmoid(wp))
 
     W3 = tf.Variable(tf.random_uniform([hidden_state, 5], -1.0, 1.0), name="W3")
     bias2 = tf.Variable(tf.constant(0.1, shape=[5]), name="bias2")
