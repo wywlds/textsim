@@ -27,8 +27,8 @@ class Model(object):
         return (cell, cell_init_state)
 
     def rnn(self, x, scope, cell="lstm", reuse=None):
-        (cell, init_state) = self.singleCell(scope, cell=cell, reuse=reuse)
         with tf.name_scope('RNN_' + scope), tf.variable_scope('RNN_' + scope, dtype=tf.float32):
+            (cell, init_state) = self.singleCell(scope, cell=cell, reuse=reuse)
             outputs, states = tf.nn.dynamic_rnn(cell, x, initial_state=init_state, time_major=False, dtype=tf.float32)
         return outputs
 
@@ -75,6 +75,7 @@ class Model(object):
             self.sent1 = tf.reduce_sum(self.cell_outputs1 * self.mask_s1[:, :, None], axis=1)
             self.sent2 = tf.reduce_sum(self.cell_outputs2 * self.mask_s2[:, :, None], axis=1)
 
+        print self.cell_outputs1.shape
         with tf.name_scope('loss'):
             product = tf.multiply(self.sent1, self.sent2)
             subs = tf.norm(tf.subtract(self.sent1, self.sent2), axis=1, keep_dims=True)
@@ -100,7 +101,7 @@ class Model(object):
 
         if not is_Training:
             return
-        optimizer = tf.train.AdadeltaOptimizer(learning_rate=0.0001, epsilon=1e-6)
+        optimizer = tf.train.AdadeltaOptimizer(learning_rate=0.01, epsilon=1e-6)
         with tf.name_scope('train'):
             self.train_op = optimizer.minimize(loss=self.loss)
 
