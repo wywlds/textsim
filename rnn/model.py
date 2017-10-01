@@ -82,15 +82,15 @@ class Model(object):
             subs = tf.abs(tf.subtract(self.sent1, self.sent2))
             W1 = tf.get_variable(initializer=tf.random_uniform([self.hidden_state, self.hidden_size], -1.0, 1.0, dtype=self.formatf), name="Wpro1",dtype=self.formatf)
             W2 = tf.get_variable(initializer=tf.random_uniform([self.hidden_state, self.hidden_size], -1.0, 1.0, dtype=self.formatf), name="Wpro2",dtype=self.formatf)
-            self.bias = tf.get_variable(initializer=tf.constant(0.1, shape=[self.hidden_state, 1]), name="bias",dtype=self.formatf)
+            self.bias = tf.get_variable(initializer=tf.constant(0.1, shape=[self.hidden_state, 1], dtype=self.formatf), name="bias",dtype=self.formatf)
             wp = tf.matmul(W1, tf.transpose(product))+tf.matmul(W2, tf.transpose(subs))+ self.bias
             ltransform = tf.transpose(tf.sigmoid(wp))
 
             W3 = tf.get_variable(initializer=tf.random_uniform([self.hidden_state, 5], -1.0, 1.0, dtype=self.formatf), name="Wpro3",dtype=self.formatf)
-            bias2 = tf.get_variable(initializer=tf.constant(0.1, shape=[5]), name="bias2",dtype=self.formatf)
+            bias2 = tf.get_variable(initializer=tf.constant(0.1, shape=[5], dtype=self.formatf), name="bias2",dtype=self.formatf)
             projection = tf.nn.xw_plus_b(ltransform, W3, bias2)
             psoftmax = tf.nn.softmax(projection)
-            value = tf.constant([[1.0], [2.0], [3.0], [4.0], [5.0]])
+            value = tf.constant([[1.0], [2.0], [3.0], [4.0], [5.0]], dtype=self.formatf)
             self.prediction = tf.matmul(psoftmax, value)
             loss = tf.nn.softmax_cross_entropy_with_logits(logits=projection, labels=self.target)
             l2_regularizer = tf.contrib.layers.l2_regularizer(
