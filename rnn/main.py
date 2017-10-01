@@ -1,9 +1,11 @@
 #coding=utf-8
+import sys
+sys.path.extend(['/root/textsim'])
 from batcher import Batcher
 import tensorflow as tf
 from model import Model
 import metrics
-num_epoch = 50
+num_epoch = 200
 batcher = Batcher()
 
 def runEpoch(sess, model):
