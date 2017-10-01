@@ -3,7 +3,7 @@ import tensorflow as tf
 import common
 import batcher
 class Model(object):
-    formatf = tf.float64
+    formatf = tf.float32
     # LSTM hidden state的维数
     hidden_size = 50
 
@@ -13,24 +13,29 @@ class Model(object):
     # 最后做softmax的维数
     hidden_state = 50
 
+    cell =None
     def singleCell(self, scope, cell="lstm", reuse=None):
+        if self.cell!=None:
+            print self.cell.name
+            return (self.cell, None)
         if cell == 'gru':
             with tf.variable_scope("grucell" + scope, reuse=reuse, dtype=self.formatf):
-                cell = tf.contrib.rnn.GRUCell(self.hidden_size, reuse = tf.get_variable_scope().reuse)
+                self.cell = tf.contrib.rnn.GRUCell(self.hidden_size, reuse = tf.get_variable_scope().reuse)
         else:
-            with tf.variable_scope("lstmcell"+scope, reuse=reuse, dtype=self.formatf):
-                cell=tf.contrib.rnn.BasicLSTMCell(self.hidden_size, state_is_tuple=True, reuse=tf.get_variable_scope().reuse)
-
+            with tf.variable_scope("lstmcell"+scope, reuse=reuse, dtype=self.formatf) as vs:
+                self.cell=tf.contrib.rnn.BasicLSTMCell(self.hidden_size, state_is_tuple=True, reuse=tf.get_variable_scope().reuse)
+                #print [v for v in tf.global_variables() if v.name.startswith(vs.name)]
+                print vs.name
+                print self.cell.name
         with tf.variable_scope("cell_init_state"+scope, reuse=reuse, dtype=self.formatf):
             cell_init_state=None
             #cell_init_state=cell.zero_state(self.batch_size,dtype=tf.float32)
-
-        return (cell, cell_init_state)
+        return (self.cell, cell_init_state)
 
     def rnn(self, x, scope, cell="lstm", reuse=None):
         with tf.name_scope('RNN_' + scope), tf.variable_scope('RNN_' + scope, dtype=self.formatf):
-            (cell, init_state) = self.singleCell(scope, cell=cell, reuse=reuse)
-            outputs, states = tf.nn.dynamic_rnn(cell, x, initial_state=init_state, time_major=False, dtype=self.formatf)
+            (_, init_state) = self.singleCell(scope, cell=cell, reuse=reuse)
+            outputs, states = tf.nn.dynamic_rnn(self.cell, x, initial_state=init_state, time_major=False, dtype=self.formatf)
         return outputs
 
     def assign_new_lr(self, session, lr_value):
