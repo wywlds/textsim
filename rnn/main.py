@@ -3,7 +3,7 @@ import sys
 sys.path.extend(['/root/textsim'])
 from batcher import Batcher
 import tensorflow as tf
-from model import Model
+from avgmodel import Model
 import metrics
 num_epoch = 200
 batcher = Batcher()
