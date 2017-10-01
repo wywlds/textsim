@@ -5,7 +5,7 @@ import batcher
 class Model(object):
     formatf = tf.float32
     # LSTM hidden state的维数
-    hidden_size = 50
+    hidden_size = 150
 
     # embedding 的维数
     embed_dim=300
@@ -79,9 +79,9 @@ class Model(object):
         print self.cell_outputs1.shape
         with tf.name_scope('loss'):
             product = tf.multiply(self.sent1, self.sent2)
-            subs = tf.norm(tf.subtract(self.sent1, self.sent2), axis=1, keep_dims=True)
+            subs = tf.subtract(self.sent1, self.sent2)
             W1 = tf.get_variable(initializer=tf.random_uniform([self.hidden_state, self.hidden_size], -1.0, 1.0), name="Wpro1",dtype=self.formatf)
-            W2 = tf.get_variable(initializer=tf.random_uniform([self.hidden_state, 1], -1.0, 1.0), name="Wpro2",dtype=self.formatf)
+            W2 = tf.get_variable(initializer=tf.random_uniform([self.hidden_state, self.hidden_size], -1.0, 1.0), name="Wpro2",dtype=self.formatf)
             self.bias = tf.get_variable(initializer=tf.constant(0.1, shape=[self.hidden_state, 1]), name="bias",dtype=self.formatf)
             wp = tf.matmul(W1, tf.transpose(product))+tf.matmul(W2, tf.transpose(subs))+ self.bias
             ltransform = tf.transpose(tf.sigmoid(wp))

@@ -7,7 +7,7 @@ import metrics
 vocab_size=2303
 embedding_dim = 300
 batch_size=10
-num_epoch=10
+num_epoch=30
 hidden_state=200
 def next_batch(num, data1, data2, labels, random=True):
     idx = np.arange(0, len(data1))
@@ -82,9 +82,9 @@ if __name__=="__main__":
     rightAverage = tf.transpose(tf.multiply(tf.transpose(rightSum), rightlength))
 
     product = tf.multiply(leftAverage, rightAverage)
-    subs = tf.norm(tf.subtract(leftAverage, rightAverage), axis=1, keep_dims=True)
+    subs = tf.subtract(leftAverage, rightAverage)
     W1 = tf.Variable(tf.random_uniform([hidden_state,300], -1.0, 1.0), name="W1")
-    W2 = tf.Variable(tf.random_uniform([hidden_state,1], -1.0, 1.0), name="W2")
+    W2 = tf.Variable(tf.random_uniform([hidden_state,300], -1.0, 1.0), name="W2")
     bias = tf.Variable(tf.constant(0.1, shape=[hidden_state,1]), name="bias")
     wp = tf.matmul(W1, tf.transpose(product)) + tf.matmul(W2, tf.transpose(subs)) + bias
     ltransform = tf.transpose(tf.sigmoid(wp))
