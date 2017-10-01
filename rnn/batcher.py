@@ -27,16 +27,15 @@ class Batcher(object):
         maxlength=0
         masks=[]
         for i in idx:
-            maxlength = max(maxlength, len(data[i]) + 1)
+            maxlength = max(maxlength, len(data[i]))
         for i in idx:
             d=[]
             mask=[]
             senLen = len(data[i])
             for j in range(maxlength):
                 mask.append(0)
-                if j == senLen:
-                    mask[j] = 1
                 if j < senLen:
+                    mask[j] = 1
                     d.append(data[i][j])
                 else:
                     d.append(2302)
