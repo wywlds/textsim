@@ -77,9 +77,13 @@ class Model(object):
                 self.cell_outputs1 = self.rnn(x=self.embedding1, scope='side', cell='lstm', reuse=True)
                 self.cell_outputs2 = self.rnn(x=self.embedding2, scope='side', cell='lstm', reuse=True)
 
+        self.rawsent1 = tf.reduce_sum(self.cell_outputs1 * self.mask_s1[:, :, None], axis=1)
+        self.rawsent2 = tf.reduce_sum(self.cell_outputs2 * self.mask_s2[:, :, None], axis=1)
+
         self.projectionW=tf.get_variable("projectionW",initializer=tf.random_uniform([self.hidden_state],-1.0,1.0,dtype=self.formatf))
-        projection1 = tf.tensordot(self.cell_outputs1, self.projectionW,axes=1)
-        projection2 = tf.tensordot(self.cell_outputs2, self.projectionW,axes=1)
+        self.projectionR=tf.get_variable("projectionR",initializer=tf.random_uniform([self.hidden_state,1],-1.0,1.0,dtype=self.formatf))
+        projection1 = tf.tensordot(self.cell_outputs1, self.projectionW,axes=1)+tf.tensordot(self.rawsent1, self.projectionR,axes=1)
+        projection2 = tf.tensordot(self.cell_outputs2, self.projectionW,axes=1)+tf.tensordot(self.rawsent2, self.projectionR,axes=1)
 
         p1 = tf.exp(tf.nn.tanh(projection1)) * self.mask_s1[:,:]
         p2 = tf.exp(tf.nn.tanh(projection2)) * self.mask_s2[:,:]
