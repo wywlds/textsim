@@ -3,7 +3,7 @@ import tensorflow as tf
 import common
 import batcher
 class Model(object):
-    formatf = tf.float32
+    formatf = tf.float64
     # LSTM hidden state的维数
     hidden_size = 50
 
@@ -51,7 +51,7 @@ class Model(object):
         self._batch_size_update = tf.assign(self.batch_size, self.new_batch_size)
 
         #Learning rate, 可以调整
-        self.lr = tf.Variable(0.0, trainable=False)
+        self.lr = tf.Variable(0.0, trainable=False, dtype=self.formatf)
         self.new_lr = tf.placeholder(self.formatf, shape=[], name="new_learning_rate")
         self._lr_update = tf.assign(self.lr, self.new_lr)
 
