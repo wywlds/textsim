@@ -78,12 +78,15 @@ class Model(object):
                 self.cell_outputs2 = self.rnn(x=self.embedding2, scope='side', cell='lstm', reuse=True)
 
         self.projectionW=tf.get_variable("projectionW",initializer=tf.random_uniform([self.hidden_state],-1.0,1.0,dtype=self.formatf))
-        projection1 = tf.tensordot(self.cell_outputs1, self.projectionW,axes=1) * self.mask_s1[:, :]
-        projection2 = tf.tensordot(self.cell_outputs2, self.projectionW,axes=1) * self.mask_s2[:, :]
+        projection1 = tf.tensordot(self.cell_outputs1, self.projectionW,axes=1)
+        projection2 = tf.tensordot(self.cell_outputs2, self.projectionW,axes=1)
+
+        p1 = tf.exp(tf.nn.tanh(projection1)) * self.mask_s1[:,:]
+        p2 = tf.exp(tf.nn.tanh(projection2)) * self.mask_s2[:,:]
 
         with tf.name_scope('Vector_Layer'):
-            self.sent1 = tf.reduce_sum(self.cell_outputs1 * projection1[:,:,None], axis=1) / tf.reduce_sum(projection1[:,:,None], axis=1)
-            self.sent2 = tf.reduce_sum(self.cell_outputs2 * projection2[:,:,None], axis=1) / tf.reduce_sum(projection2[:,:,None], axis=1)
+            self.sent1 = tf.reduce_sum(self.cell_outputs1 * p1[:,:,None], axis=1) / tf.reduce_sum(p1[:,:,None], axis=1)
+            self.sent2 = tf.reduce_sum(self.cell_outputs2 * p2[:,:,None], axis=1) / tf.reduce_sum(p2[:,:,None], axis=1)
 
         print self.cell_outputs1.shape
         with tf.name_scope('loss'):
