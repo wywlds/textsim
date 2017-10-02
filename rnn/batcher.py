@@ -35,7 +35,8 @@ class Batcher(object):
             for j in range(maxlength):
                 mask.append(0)
                 if j < senLen:
-                    mask[j] = 1
+                    if j == senLen -1:
+                        mask[j] = 1
                     d.append(data[i][j])
                 else:
                     d.append(2302)

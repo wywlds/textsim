@@ -5,7 +5,7 @@ import batcher
 class Model(object):
     formatf = tf.float32
     # LSTM hidden state的维数
-    hidden_size = 150
+    hidden_size = 50
 
     # embedding 的维数
     embed_dim=300
@@ -16,17 +16,15 @@ class Model(object):
     cell =None
     def singleCell(self, scope, cell="lstm", reuse=None):
         if self.cell!=None:
-            print self.cell.name
             return (self.cell, None)
         if cell == 'gru':
             with tf.variable_scope("grucell" + scope, reuse=reuse, dtype=self.formatf):
                 self.cell = tf.contrib.rnn.GRUCell(self.hidden_size, reuse = tf.get_variable_scope().reuse)
         else:
             with tf.variable_scope("lstmcell"+scope, reuse=reuse, dtype=self.formatf) as vs:
-                self.cell=tf.contrib.rnn.BasicLSTMCell(self.hidden_size, state_is_tuple=True, reuse=tf.get_variable_scope().reuse)
+
+                self.cell=tf.nn.rnn_cell.LSTMCell(self.hidden_size, state_is_tuple=True, reuse=tf.get_variable_scope().reuse)
                 #print [v for v in tf.global_variables() if v.name.startswith(vs.name)]
-                print vs.name
-                print self.cell.name
         with tf.variable_scope("cell_init_state"+scope, reuse=reuse, dtype=self.formatf):
             cell_init_state=None
             #cell_init_state=cell.zero_state(self.batch_size,dtype=tf.float32)
