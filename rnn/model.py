@@ -5,7 +5,7 @@ import batcher
 class Model(object):
     formatf = tf.float32
     # LSTM hidden state的维数
-    hidden_size = 50
+    hidden_size = 150
 
     # embedding 的维数
     embed_dim=300
@@ -102,7 +102,7 @@ class Model(object):
 
         if not is_Training:
             return
-        optimizer = tf.train.AdadeltaOptimizer(learning_rate=0.05, epsilon=1e-6)
+        optimizer = tf.train.AdadeltaOptimizer(learning_rate=0.01)
         #optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01)
         with tf.name_scope('train'):
             self.train_op = optimizer.minimize(loss=self.loss)
