@@ -40,5 +40,5 @@ def convert(input, output):
     fout.close()
 
 if __name__=="__main__":
-    convert("../dataset/sick/train.txt", "../trainformat.txt")
-    convert("../dataset/sick/test.txt", "../testformat.txt")
+    convert("../dataset/sick/train.txt", "../trainformat2.txt")
+    convert("../dataset/sick/test.txt", "../testformat2.txt")

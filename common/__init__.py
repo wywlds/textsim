@@ -1,5 +1,5 @@
 import numpy as np
-filename = '../selfvocab.txt'
+filename = '../selfvocab2.txt'
 def loadGloVe(filename):
     vocab = []
     idx = []
@@ -44,10 +44,10 @@ def getDataset(filename):
     return (leftsents, rightsents, scores)
 
 def getTrainSet():
-    return getDataset("../trainformat.txt")
+    return getDataset("../trainformat2.txt")
 
 def getTestSet():
-    return getDataset("../testformat.txt")
+    return getDataset("../testformat2.txt")
 
 if __name__=="__main__":
     (left, right, scores) = getTrainSet()

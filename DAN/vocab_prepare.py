@@ -1,6 +1,6 @@
 import numpy as np
 import re
-filename = '../glove.6B.300d.txt'
+filename = '../glove.840B.300d.txt'
 def loadGloVe(filename):
     vocab = []
     embd = []
@@ -60,7 +60,7 @@ if __name__=="__main__":
     processFileName("../dataset/sick/test.txt")
     processFileName("../dataset/sick/train.txt")
     i = 0
-    f=open("../selfvocab.txt","w")
+    f=open("../selfvocab2.txt","w")
     for (word, embed) in self_vocab.items():
         f.write("\t".join((word, str(i), "\t".join(embed))))
         f.write("\n")

@@ -22,12 +22,9 @@ class Model(object):
                 self.cell = tf.contrib.rnn.GRUCell(self.hidden_size, reuse = tf.get_variable_scope().reuse)
         else:
             with tf.variable_scope("lstmcell"+scope, reuse=reuse, dtype=self.formatf) as vs:
-
                 self.cell=tf.nn.rnn_cell.LSTMCell(self.hidden_size, state_is_tuple=True, reuse=tf.get_variable_scope().reuse)
-                #print [v for v in tf.global_variables() if v.name.startswith(vs.name)]
         with tf.variable_scope("cell_init_state"+scope, reuse=reuse, dtype=self.formatf):
             cell_init_state=None
-            #cell_init_state=cell.zero_state(self.batch_size,dtype=tf.float32)
         return (self.cell, cell_init_state)
 
     def rnn(self, x, scope, cell="lstm", reuse=None):
