@@ -108,7 +108,7 @@ class Model(object):
 
         print self.cell_outputs1.shape
         with tf.name_scope('loss'):
-            ltransform=self.productSubNorm(self.sent1, self.sent2)
+            ltransform=tf.sigmoid(self.productSubNorm(self.sent1, self.sent2))
 
             W3 = tf.get_variable(initializer=tf.random_uniform([self.hidden_state, 5], -1.0, 1.0, dtype=self.formatf), name="Wpro3",dtype=self.formatf)
             bias2 = tf.get_variable(initializer=tf.constant(0.1, shape=[5], dtype=self.formatf), name="bias2",dtype=self.formatf)

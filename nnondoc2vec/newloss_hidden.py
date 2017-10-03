@@ -89,11 +89,11 @@ if __name__=="__main__":
     x2=tf.placeholder(tf.float32, shape=[None, input_dim], name="x2")
     pivot = tf.placeholder(tf.float32, shape=[None, 5], name="pivot")
 
-    #ltransform=productSubNorm()
-    #ltransform = productOnly()
-    ltransform=productSub()
-    #ltransform=sub()
-
+    rtransform=productSubNorm()
+    #rtransform = productOnly()
+    #rtransform=productSub()
+    #rtransform=sub()
+    ltransform = tf.sigmoid(rtransform)
 
     W3 = tf.Variable(tf.random_uniform([hidden_state,5], -1.0, 1.0), name="W3")
     bias2 = tf.Variable(tf.constant(0.1, shape=[5]), name="bias2")
