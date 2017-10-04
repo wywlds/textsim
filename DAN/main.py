@@ -82,16 +82,19 @@ if __name__=="__main__":
     rightAverage = tf.transpose(tf.multiply(tf.transpose(rightSum), rightlength))
 
     product = tf.multiply(leftAverage, rightAverage)
-    subs = tf.subtract(leftAverage, rightAverage)
     W1 = tf.Variable(tf.random_uniform([hidden_state,300], -1.0, 1.0), name="W1")
-    W2 = tf.Variable(tf.random_uniform([hidden_state,300], -1.0, 1.0), name="W2")
     bias = tf.Variable(tf.constant(0.1, shape=[hidden_state,1]), name="bias")
-    wp = tf.matmul(W1, tf.transpose(product)) + tf.matmul(W2, tf.transpose(subs)) + bias
-    ltransform = tf.transpose(tf.sigmoid(wp))
+    wp = tf.matmul(W1, tf.transpose(product)) + bias
+    ltransform = tf.transpose(wp)
 
+    subs = tf.abs(tf.subtract(leftAverage, rightAverage))
+
+    # projection=productSub(hidden_state)
     W3 = tf.Variable(tf.random_uniform([hidden_state, 5], -1.0, 1.0), name="W3")
+    W4 = tf.Variable(tf.random_uniform([300, 5], -1.0, 1.0), name="W4")
     bias2 = tf.Variable(tf.constant(0.1, shape=[5]), name="bias2")
-    projection = tf.nn.xw_plus_b(ltransform, W3, bias2)
+    projection = tf.matmul(ltransform, W3) + tf.matmul(subs, W4) + bias2
+
     psoftmax = tf.nn.softmax(projection)
     value = tf.constant([[1.0], [2.0], [3.0], [4.0], [5.0]])
     prediction = tf.matmul(psoftmax, value)
@@ -102,8 +105,8 @@ if __name__=="__main__":
     weights = tf.trainable_variables()
     regularization_penalty = tf.contrib.layers.apply_regularization(l2_regularizer, weights)
     losses = tf.reduce_mean(loss) + regularization_penalty
-    train_op = tf.train.AdadeltaOptimizer(1., 0.95, 1e-6).minimize(losses)
-    #train_op = tf.train.GradientDescentOptimizer(0.03).minimize(losses)
+    #train_op = tf.train.AdadeltaOptimizer(1., 0.95, 1e-6).minimize(losses)
+    train_op = tf.train.GradientDescentOptimizer(0.05).minimize(losses)
     init = tf.global_variables_initializer()
 
     saver = tf.train.Saver()

@@ -24,7 +24,7 @@ def next_batch(num, data1, data2, labels):
             label[int(floor - 1)]=ceil-sim
         labelsbatch.append(label)
     return (data1batch, data2batch, labelsbatch)
-def productSubNorm():
+def productSubNorm(hidden_state):
     result = tf.multiply(x1, x2)
     subs = tf.norm(tf.subtract(x1, x2), axis=1, keep_dims=True)
     print subs.shape
@@ -39,7 +39,7 @@ def productSubNorm():
     print ltransform.shape
     return ltransform
 
-def productSub():
+def productSub(hidden_state):
     result = tf.multiply(x1, x2)
     subs = tf.abs(tf.subtract(x1, x2))
     print subs.shape
@@ -54,7 +54,7 @@ def productSub():
     print ltransform.shape
     return ltransform
 
-def sub():
+def sub(hidden_state):
     subs = tf.abs(tf.subtract(x1, x2))
     W2 = tf.Variable(tf.random_uniform([hidden_state, input_dim], -1.0, 0), name="W2")
     bias = tf.Variable(tf.constant(0.1, shape=[hidden_state, 1]), name="bias")
@@ -64,7 +64,7 @@ def sub():
     print ltransform.shape
     return ltransform
 
-def productOnly():
+def productOnly(hidden_state):
     result = tf.multiply(x1, x2)
     W1 = tf.Variable(tf.random_uniform([hidden_state, input_dim], -1.0, 1.0), name="W1")
     bias = tf.Variable(tf.constant(0.1, shape=[hidden_state, 1]), name="bias")
@@ -84,25 +84,30 @@ if __name__=="__main__":
     print inputs2[:1]
     print targets[:1]
     batch_num=10
-    num_epoch = 50
+    num_epoch = 100
     x1=tf.placeholder(tf.float32, shape=[None, input_dim], name="x1")
     x2=tf.placeholder(tf.float32, shape=[None, input_dim], name="x2")
     pivot = tf.placeholder(tf.float32, shape=[None, 5], name="pivot")
 
-    rtransform=productSubNorm()
+    #rtransform=productSubNorm()
     #rtransform = productOnly()
     #rtransform=productSub()
     #rtransform=sub()
-    ltransform = tf.sigmoid(rtransform)
 
+    product =tf.sigmoid(productOnly(hidden_state))
+    subs = tf.abs(tf.subtract(x1, x2))
+
+    #projection=productSub(hidden_state)
     W3 = tf.Variable(tf.random_uniform([hidden_state,5], -1.0, 1.0), name="W3")
+    W4 = tf.Variable(tf.random_uniform([input_dim, 5], -1.0, 1.0), name="W4")
     bias2 = tf.Variable(tf.constant(0.1, shape=[5]), name="bias2")
-    projection = tf.nn.xw_plus_b(ltransform, W3, bias2)
+    projection = tf.matmul(product, W3) + tf.matmul(subs, W4) + bias2
+
     psoftmax = tf.nn.softmax(projection)
+
     value = tf.constant([[1.0],[2.0],[3.0],[4.0],[5.0]])
     prediction=tf.matmul(psoftmax, value)
     loss = tf.nn.softmax_cross_entropy_with_logits(logits=projection, labels=pivot)
-    init = tf.global_variables_initializer()
 
     l2_regularizer = tf.contrib.layers.l2_regularizer(
         scale=0.0001, scope=None
@@ -113,9 +118,10 @@ if __name__=="__main__":
     losses = tf.reduce_mean(loss) + regularization_penalty
     #losses = tf.reduce_mean(loss)
 
-    train_op = tf.train.GradientDescentOptimizer(0.03).minimize(losses)
+    train_op = tf.train.GradientDescentOptimizer(0.05).minimize(losses)
+    #train_op = tf.train.AdadeltaOptimizer(learning_rate=0.05).minimize(losses)
     lenth = len(inputs1)
-
+    init = tf.global_variables_initializer()
 
     with tf.Session() as sess:
         sess.run(init)

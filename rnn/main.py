@@ -34,6 +34,7 @@ def evaluate(sess,testmodel):
     newScores = []
     for item in result:
         newScores.append(item[0])
+    print newScores
     scores=batcher.test_score()
     metrics.evaluate(newScores, scores)
 

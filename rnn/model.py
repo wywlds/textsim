@@ -70,6 +70,16 @@ class Model(object):
         print ltransform.shape
         return ltransform
 
+    def productOnly(self,x1,x2):
+        result = tf.multiply(x1, x2)
+        W1 = tf.Variable(tf.random_uniform([self.hidden_state, self.hidden_size], -1.0, 1.0), name="W1")
+        bias = tf.Variable(tf.constant(0.1, shape=[self.hidden_state, 1]), name="bias")
+        w1p = tf.matmul(W1, tf.transpose(result))
+        w4p = tf.add(w1p, bias)
+        ltransform = tf.transpose(w4p)
+        print ltransform.shape
+        return ltransform
+
     def __init__(self, sess, is_Training=True, batch_size=25):
         #得到embedding
         emb = common.getEmb()
@@ -108,11 +118,14 @@ class Model(object):
 
         print self.cell_outputs1.shape
         with tf.name_scope('loss'):
-            ltransform=tf.sigmoid(self.productSubNorm(self.sent1, self.sent2))
+            product = self.productOnly(self.sent1, self.sent2)
+            subs = tf.abs(tf.subtract(self.sent1, self.sent2))
 
-            W3 = tf.get_variable(initializer=tf.random_uniform([self.hidden_state, 5], -1.0, 1.0, dtype=self.formatf), name="Wpro3",dtype=self.formatf)
-            bias2 = tf.get_variable(initializer=tf.constant(0.1, shape=[5], dtype=self.formatf), name="bias2",dtype=self.formatf)
-            projection = tf.nn.xw_plus_b(ltransform, W3, bias2)
+            W3 = tf.Variable(tf.random_uniform([self.hidden_state, 5], -1.0, 1.0), name="W3")
+            W4 = tf.Variable(tf.random_uniform([self.input_dim, 5], -1.0, 1.0), name="W4")
+            bias2 = tf.Variable(tf.constant(0.1, shape=[5]), name="bias2")
+            projection = tf.matmul(product, W3) + tf.matmul(subs, W4) + bias2
+
             psoftmax = tf.nn.softmax(projection)
             value = tf.constant([[1.0], [2.0], [3.0], [4.0], [5.0]], dtype=self.formatf)
             self.prediction = tf.matmul(psoftmax, value)
