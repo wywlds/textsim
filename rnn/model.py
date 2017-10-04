@@ -122,7 +122,7 @@ class Model(object):
             subs = tf.abs(tf.subtract(self.sent1, self.sent2))
 
             W3 = tf.Variable(tf.random_uniform([self.hidden_state, 5], -1.0, 1.0), name="W3")
-            W4 = tf.Variable(tf.random_uniform([self.embed_dim, 5], -1.0, 1.0), name="W4")
+            W4 = tf.Variable(tf.random_uniform([self.hidden_size, 5], -1.0, 1.0), name="W4")
             bias2 = tf.Variable(tf.constant(0.1, shape=[5]), name="bias2")
             projection = tf.matmul(product, W3) + tf.matmul(subs, W4) + bias2
 
