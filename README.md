@@ -11,3 +11,7 @@
     /tf-idf   --- tf-idf cosine算法
     /lda      --- LDA算法
     /doc2vec  --- doc2vec算法
+    /nnondoc2vec --- NNonDoc2vec算法
+    /DAN      --- 词向量平均网络
+    /common   --- tokenization工具
+    /rnn      --- LSTM-RNN算法
