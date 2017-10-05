@@ -106,11 +106,11 @@ class Model(object):
 
         with tf.name_scope('lstm_output_layer'):
             if is_Training:
-                self.cell_outputs1 = self.rnn(x=self.embedding1, scope='side', cell='lstm', reuse=None)
-                self.cell_outputs2 = self.rnn(x=self.embedding2, scope='side', cell='lstm', reuse=True)
+                self.cell_outputs1 = self.rnn(x=self.embedding1, scope='side', cell='gru', reuse=None)
+                self.cell_outputs2 = self.rnn(x=self.embedding2, scope='side', cell='gru', reuse=True)
             else:
-                self.cell_outputs1 = self.rnn(x=self.embedding1, scope='side', cell='lstm', reuse=True)
-                self.cell_outputs2 = self.rnn(x=self.embedding2, scope='side', cell='lstm', reuse=True)
+                self.cell_outputs1 = self.rnn(x=self.embedding1, scope='side', cell='gru', reuse=True)
+                self.cell_outputs2 = self.rnn(x=self.embedding2, scope='side', cell='gru', reuse=True)
 
         with tf.name_scope('Vector_Layer'):
             self.sent1 = tf.reduce_sum(self.cell_outputs1 * self.mask_s1[:, :, None], axis=1)
@@ -139,7 +139,7 @@ class Model(object):
 
         if not is_Training:
             return
-        optimizer = tf.train.AdadeltaOptimizer(learning_rate=0.05)
+        optimizer = tf.train.AdadeltaOptimizer(1., 0.95, 1e-6)
         #optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01)
         with tf.name_scope('train'):
             self.train_op = optimizer.minimize(loss=self.loss)
