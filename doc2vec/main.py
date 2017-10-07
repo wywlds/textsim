@@ -1,5 +1,6 @@
 import gensim
 import re
+
 def simple_preprocess(sent):
     words = re.split(",| ", sent)
     wordlist = []

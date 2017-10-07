@@ -15,3 +15,5 @@
     /DAN      --- 词向量平均网络
     /common   --- tokenization工具
     /rnn      --- LSTM-RNN算法
+    /vecrep   --- 比较w2c,d2c,w2c+d2c的实验
+    /skipthought --- skip-thoughts的cosine和softmax两种算法
